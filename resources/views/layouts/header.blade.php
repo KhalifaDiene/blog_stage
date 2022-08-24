@@ -14,10 +14,17 @@
                 </div>
                 <div class="ed-com-t1-right">
                     <ul>
+                        @if (Auth::check())
+                        <li><a href="/blogueur/index" >Mon espace</a>
+                        </li>
+                        <li><a href="/blogueur/logout">Se déconnecter</a>
+                        </li>
+                        @else
                         <li><a href="#!" data-toggle="modal" data-target="#modal1">Se connecter</a>
                         </li>
                         <li><a href="#!" data-toggle="modal" data-target="#modal2">S'inscrire</a>
                         </li>
+                        @endif
                     </ul>
                 </div>
                 <div class="ed-com-t1-social">

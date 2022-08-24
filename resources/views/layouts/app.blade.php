@@ -63,10 +63,10 @@
     @include('layouts.social-media')
 
     <!--Import jQuery before materialize.js-->
-    <script src="js/main.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{ asset('assets/js/main.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/materialize.min.js') }}"></script>
+    <script src=" {{ asset('assets/js/custom.js') }} "></script>
 </body>
 
 </html>

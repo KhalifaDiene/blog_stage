@@ -3,50 +3,50 @@
     <div id="modal1" class="modal fade" role="dialog">
         <div class="log-in-pop">
             <div class="log-in-pop-left">
-                <h1>Hello...</h1>
-                <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                <h4>Login with social media</h4>
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                    </li>
-                </ul>
+                <h1>Bienvenue</h1>
+                <p>Veuillez-vous connecter pour accéder à la partie Admin de l'application</p>
+                <div>
+                    <img src=" {{ asset('assets/images/logo3.png') }} " alt="">
+                </div>
+
             </div>
-            <div class="log-in-pop-right">
+            <div class="log-in-pop-right text-center">
                 <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
-                <h4>Login</h4>
-                <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                <form class="s12">
+                <h4> Login</h4>
+                <p>Veuillez renseigner les champs ci-dessous pour vous connecter</p>
+                <form method="POST" action="{{ route('login') }}" class="s12">
+                    @csrf
                     <div>
                         <div class="input-field s12">
-                            <input type="text" data-ng-model="name" class="validate">
-                            <label>User name</label>
+                            <input type="email" id="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <label for="email">Identifiant</label>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
+
                     <div>
                         <div class="input-field s12">
-                            <input type="password" class="validate">
-                            <label>Password</label>
+                            <input type="password" id="password" class="@error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
+                            <label for="password">Mot de passe</label>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
-                    <div>
-                        <div class="s12 log-ch-bx">
-                            <p>
-                                <input type="checkbox" id="test5" />
-                                <label for="test5">Remember me</label>
-                            </p>
-                        </div>
-                    </div>
+
                     <div>
                         <div class="input-field s4">
-                            <input type="submit" value="Login" class="waves-effect waves-light log-in-btn"> </div>
+                            <input type="submit" value="Se connecter" class="waves-effect waves-light log-in-btn"> </div>
                     </div>
                     <div>
-                        <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                        <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Mot de passe oublié</a> </div>
                     </div>
                 </form>
             </div>
