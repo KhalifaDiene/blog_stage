@@ -22,6 +22,8 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="{{ asset('assets/css/style-mob.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,6 +33,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
 
     <!-- MOBILE MENU -->
     @include('layouts.mob-menu')
@@ -67,6 +70,17 @@
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/materialize.min.js') }}"></script>
     <script src=" {{ asset('assets/js/custom.js') }} "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+    <script>
+        @if (Session::has('success_add_category'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Succès',
+                text: '{{ Session::get("success") }}'
+            })
+        @endif
+    </script>
 </body>
 
 </html>

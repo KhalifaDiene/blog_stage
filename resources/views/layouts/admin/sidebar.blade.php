@@ -23,14 +23,15 @@
             </li>
             @endif
 
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Categorie</a>
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Categories</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="admin-event-all.html">Toutes les Categories</a>
-                        </li>
                         @if (Auth::user()->profil == "blogueur")
-                        <li><a href="admin-event-add.html">Nouvelle Categorie</a>
-                        </li>
+                            <li><a href="/blogueur/categories">Toutes les Categories</a>
+                            </li>
+                        @elseif(Auth::user()->profil == "admin")
+                            <li><a href="/admin/categories">Toutes les Categories</a>
+                            </li>
                         @endif
                     </ul>
                 </div>
@@ -38,12 +39,15 @@
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bullhorn" aria-hidden="true"></i> Article</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="admin-seminar-all.html">Tous les Articles</a>
-                        </li>
-                       @if (Auth::user()->profil == "blogueur")
-                       <li><a href="admin-seminar-add.html">Nouveau Article</a>
-                       </li>
-                       @endif
+                        @if (Auth::user()->profil == "blogueur")
+                            <li><a href="/blogueur/articles">Tous les Articles</a>
+                            </li>
+                            <li><a href="/blogueur/new-article">Nouveau Article</a>
+                            </li>
+                        @else
+                            <li><a href="/admin/articles">Tous les Articles</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </li>
