@@ -31,6 +31,12 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::prefix('/blogueur')->group(function() {
         Route::get('/index', [BlogueurAccueilController::class, 'index']);
+
+        Route::prefix('/article')->group(function() {
+            Route::get('/', function() {
+                return view('blogueur.articles.index');
+            });
+        });
         Route::get('/logout', function() {
             Auth::logout();
             return redirect()->back();
