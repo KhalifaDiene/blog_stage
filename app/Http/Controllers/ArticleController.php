@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     //fonction qui permet de recuperer les articles
     public function index(){
-        $articles= Article::all();
+        $articles= Article::get();
         return view('blog.index', compact('articles'));
     }
 }

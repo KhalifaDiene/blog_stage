@@ -21,7 +21,7 @@
                     <div class="ho-event pg-eve-main pg-blog">
                       
                             <ul>
-                             @foreach ($articles as $article )
+                             @foreach ($articles as $article)
                                 <li>
                                     <div class="ho-ev-date pg-eve-date"><span>07</span><span>jan,2018</span>
                                     </div>

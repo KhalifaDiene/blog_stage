@@ -76,13 +76,11 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/logout', [HomeController::class, 'logout']);
 
 
-//**********************/
-Route::get('/blog/detaills_blog', function(){
-    return view('blog.detaills_blog');
-});
+//la route permet de de se diriger vers les categories d'un blogueur dans les detailles de blog
+Route::get('/blog/detaills_blog/{id}', [CategoryController::class, 'index']);
 
 //la route permet de de se diriger vers les categories d'un blogueur 
 Route::get('/blog/index/{id}', [CategoryController::class, 'index']);
 
-//la route permet de se diriger vers les articles d'un blogueur 
+//la route permet de se diriger vers les articles d'un blogueur dans les blogs
 Route::get('/blog/index', [ArticleController::class, 'index']);
