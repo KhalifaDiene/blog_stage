@@ -32,11 +32,7 @@ Auth::routes(); // Authentification : (Login and Register).
 // Le middleware permet de controler l'accès a certain page
 // Ici le middleware oblige une authentification avant d'accéder à la page Admin.
 Route::group(['middleware' => ['auth']], function() {
-    Route::prefix('/admin')->group(function () {
-        Route::get('/index', [AdminAccueilController::class, 'allUsers']);
-
-        Route::prefix('/users')->group(function(){
-            Route::get('/', [AdminAccueilController::class, 'allUsers']);
+<<<<<<<<< Temporary merge branch 1
 
     Route::group(['middleware' => ['role:admin']], function() {
         // Une groupe de route pour la partie Admin
@@ -59,6 +55,8 @@ Route::group(['middleware' => ['auth']], function() {
             // Cette route permet de gérer les artilces
             Route::prefix('/articles')->group(function() {
                 Route::get('/', [BlogueurArticleController::class, 'index']);
+                Route::get('/new-article', [BlogueurArticleController::class, 'newArticle']);
+                Route::post('/add-new-article', [BlogueurArticleController::class, 'addNewArticle'])->name('add-new-article');
             });
 
             Route::get('/logout', [HomeController::class, 'logout']);

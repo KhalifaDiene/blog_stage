@@ -26,28 +26,28 @@
                             <div class="box-inn-sp">
                                 <div style="display: flex; position: relative; justify-content: space-between; " class="inn-title">
                                     <div>
-                                        <h4> Cathégories </h4>
+                                        <h4> Articles </h4>
                                     </div>
                                     <div class="me-auto">
                                         <!-- <i style="font-size: 35px ; color: white" class="fa fa-book"> </i> -->
-                                        <a href="!#" data-target="#nCategory" data-toggle="modal" class="btn btn-warning">Nouvelle Catégorie</a>
+                                        {{-- <a href="!#" data-target="#nCategory" data-toggle="modal" class="btn btn-warning">Nouvelle Catégorie</a> --}}
                                     </div>
-                                    <p>All about students like name, student id, phone, email, country, city and more</p>
+                                    <p>Voici la liste de tous nos articles.</p>
                                 </div>
                                 <div class="tab-inn">
                                     <div class="table-responsive table-desi">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>User</th>
-                                                    <th>Name</th>
-                                                    <th>Phone</th>
-                                                    <th>Email</th>
-                                                    <th>Country</th>
-                                                    <th>Id</th>
-                                                    <th>Date of birth</th>
+                                                    <th>Image</th>
+                                                    <th>Titre</th>
+                                                    <th>Contenue</th>
+                                                    <th>Publié</th>
+                                                    <th>Ecrit le</th>
+                                                    <th>NBR Vues</th>
+													<th>NBE Comment</th>
 													<th>Status</th>
-													<th>View</th>
+													<th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -61,111 +61,6 @@
                                                     <td>united states</td>
                                                     <td>ST17241</td>
 													<td>03 Jun 1990</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Lucas Caden</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 8574 6854</td>
-                                                    <td>lucas@gmail.com</td>
-                                                    <td>Illinois</td>
-                                                    <td>ST10231</td>
-													<td>16 Feb 1987</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 8574 6854</td>
-                                                    <td>Ethan@gmail.com</td>
-                                                    <td>Illinois</td>
-                                                    <td>ST32168</td>
-													<td>21 Jun 1992</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 8574 6854</td>
-                                                    <td>Ethan@gmail.com</td>
-                                                    <td>Illinois</td>
-                                                    <td>ST32168</td>
-													<td>21 Jun 1992</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>united states</td>
-                                                    <td>ST17241</td>
-													<td>03 Jun 1990</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Lucas Caden</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 8574 6854</td>
-                                                    <td>lucas@gmail.com</td>
-                                                    <td>Illinois</td>
-                                                    <td>ST10231</td>
-													<td>16 Feb 1987</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 8574 6854</td>
-                                                    <td>Ethan@gmail.com</td>
-                                                    <td>Illinois</td>
-                                                    <td>ST32168</td>
-													<td>21 Jun 1992</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 8574 6854</td>
-                                                    <td>Ethan@gmail.com</td>
-                                                    <td>Illinois</td>
-                                                    <td>ST32168</td>
-													<td>21 Jun 1992</td>
                                                     <td>
                                                         <span class="label label-success">Active</span>
                                                     </td>

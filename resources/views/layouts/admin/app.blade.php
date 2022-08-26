@@ -21,12 +21,16 @@
     <link href=" {{ asset('assets/css/style.css') }} " rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="{{ asset('assets/css/style-mob.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/summernote-bs4.css') }}" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" rel="stylesheet"> --}}
+    {{-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" /> --}}
 </head>
 
 <body>
@@ -53,6 +57,16 @@
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/materialize.min.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/summernote-bs4.js') }}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.js"></script> --}}
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Entrez le contenue de votre article',
+            tabsize: 2,
+            height: 500,
+        });
+    </script>
+
 </body>
 
 
