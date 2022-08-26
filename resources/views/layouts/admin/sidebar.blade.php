@@ -19,7 +19,7 @@
             </li>
 
             @if (Auth::user()->profil == "admin")
-            <li><a href="admin-setting.html"><i class="fa fa-users" aria-hidden="true"></i> Users</a>
+            <li><a href="/admin/users"><i class="fa fa-users" aria-hidden="true"></i> Users</a>
             </li>
             @endif
 

@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
         // Une groupe de route pour la partie Admin
         Route::prefix('/admin')->group(function () {
             Route::get('/', [AdminAccueilController::class, 'index']);
+            Route::get('/users', [AdminAccueilController::class, 'allUsers']);
         });
     });
 

@@ -20,4 +20,9 @@ class Article extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function commentaires()
+    {
+        return $this->belongsToMany(User::class, 'commentaires');
+    }
 }
