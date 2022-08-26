@@ -1,4 +1,54 @@
 <section>
+    <!-- NEW CATEGORY SESSION -->
+    <div id="nCategory" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-left">
+                <h1>Bienvenue</h1>
+                <p>Vous voulez ajouter une nouvelle catégorie</p>
+                <div>
+                    <img src=" {{ asset('assets/images/logo3.png') }} " alt="">
+                </div>
+
+            </div>
+            <div class="log-in-pop-right text-center">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="{{ asset('assets/images/cancel.png') }}" alt="" />
+                </a>
+                <h4> Nouvelle Catégorie</h4>
+                <p>Veuillez renseigner les champs ci-dessous pour ajouter une nouvelle catégorie</p>
+                <form method="POST" action="{{ route('new-category') }}" enctype="multipart/form-data" class="s12">
+                    @csrf
+                    <div>
+                        <div class="input-field s12">
+                            <input type="text" id="name" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
+                            <label for="name">Nom de la catégorie</label>
+                        </div>
+                    </div>
+
+                    <div class="file-field input-field s12">
+                        <div class="btn admin-upload-btn">
+                            <span>File</span>
+                            <input name="image" type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input name="image" class="file-path validate" type="text" placeholder="L'image de la catégorie">
+                        </div>
+                    </div>
+                    <div class="input-field s12">
+                        <textarea name="description"></textarea>
+                        <label class="">Description de la catégorie</label>
+                    </div>
+
+                    <div>
+                        <div class="input-field s4">
+                            <input type="submit" value="Ajouter" class="waves-effect waves-light log-in-btn"> </div>
+                    </div>
+                    {{-- <div>
+                        <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Mot de passe oublié</a> </div>
+                    </div> --}}
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- LOGIN SECTION -->
     <div id="modal1" class="modal fade" role="dialog">
         <div class="log-in-pop">
@@ -11,7 +61,7 @@
 
             </div>
             <div class="log-in-pop-right text-center">
-                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="{{ asset('assets/images/cancel.png') }}" alt="" />
                 </a>
                 <h4> Login</h4>
                 <p>Veuillez renseigner les champs ci-dessous pour vous connecter</p>
@@ -69,7 +119,7 @@
                 </ul>
             </div>
             <div class="log-in-pop-right">
-                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="{{ asset('assets/images/cancel.png') }}" alt="" />
                 </a>
                 <h4>Create an Account</h4>
                 <p>Don't have an account? Create your account. It's take less then a minutes</p>
@@ -126,7 +176,7 @@
                 </ul>
             </div>
             <div class="log-in-pop-right">
-                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="{{ asset('assets/images/cancel.png') }}" alt="" />
                 </a>
                 <h4>Forgot password</h4>
                 <p>Don't have an account? Create your account. It's take less then a minutes</p>

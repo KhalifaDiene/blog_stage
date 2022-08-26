@@ -33,8 +33,13 @@
                 <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Parametre Admin</a>
                 </li>
                 <li class="divider"></li>
+                @if (Auth::user()->profil == "admin")
                 <li><a href="/logout" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Deconnexion</a>
                 </li>
+                @elseif(Auth::user()->profil == "blogueur")
+                <li><a href="/blogueur/logout" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Deconnexion</a>
+                </li>
+                @endif
             </ul>
         </div>
     </div>

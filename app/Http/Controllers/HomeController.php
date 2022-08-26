@@ -25,12 +25,29 @@ class HomeController extends Controller
     {
         if (Auth::user()->status == 1) {
             if (Auth::user()->profil == "admin") {
-                $dir = "/admin/index";
+                $dir = "/admin";
             } else {
+                session()->flash("success", "Vous étes connecté !!!");
                 return redirect()->back();
             }
         }
 
+        return redirect($dir);
+    }
+
+    public function logout()
+    {
+        // La variable $dir va recevoir selon le profil de user la redirection
+        $dir = "";
+
+        // Si user est un admin $dir reçoit "/login" sinon elle reçoit "/".
+        if (Auth::user()->profil == "admin") {
+            $dir = "login";
+        } else {
+            $dir = "/";
+        }
+
+        Auth::logout();
         return redirect($dir);
     }
 }
