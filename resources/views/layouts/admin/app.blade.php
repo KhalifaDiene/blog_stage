@@ -43,6 +43,8 @@
             @yield('content')
             {{-- End Contenu de la page --}}
 
+            @include('layouts.modal')
+
         </div>
     </div>
 

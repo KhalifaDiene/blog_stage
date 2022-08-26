@@ -15,4 +15,9 @@ class Article extends Model
         'status',
         'publish',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

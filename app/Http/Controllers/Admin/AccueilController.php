@@ -10,7 +10,9 @@ class AccueilController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $users = User::get();
+        // dd($users);
+        return view('admin.index', compact('users'));
     }
 
     public function allUsers()

@@ -11,5 +11,13 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'image',
+        'description',
     ];
+
+    // Permet de retourner tous les articles de la catégorie.
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
