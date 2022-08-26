@@ -42,7 +42,7 @@
                         @if (Auth::user()->profil == "blogueur")
                             <li><a href="/blogueur/articles">Tous les Articles</a>
                             </li>
-                            <li><a href="/blogueur/new-article">Nouveau Article</a>
+                            <li><a href="/blogueur/articles/new-article">Nouveau Article</a>
                             </li>
                         @else
                             <li><a href="/admin/articles">Tous les Articles</a>

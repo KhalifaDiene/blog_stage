@@ -54,6 +54,8 @@ Route::group(['middleware' => ['auth']], function() {
             // Cette route permet de gérer les artilces
             Route::prefix('/articles')->group(function() {
                 Route::get('/', [BlogueurArticleController::class, 'index']);
+                Route::get('/new-article', [BlogueurArticleController::class, 'newArticle']);
+                Route::post('/add-new-article', [BlogueurArticleController::class, 'addNewArticle'])->name('add-new-article');
             });
 
             Route::get('/logout', [HomeController::class, 'logout']);
