@@ -27,6 +27,13 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function() {
     Route::prefix('/admin')->group(function () {
         Route::get('/index', [AdminAccueilController::class, 'allUsers']);
+
+        Route::prefix('/users')->group(function(){
+            Route::get('/', [AdminAccueilController::class, 'allUsers']);
+            //     Route::get('/', function (){
+            //      return view('admin.users');
+            // });
+        });
     });
 
     Route::prefix('/blogueur')->group(function() {

@@ -17,6 +17,6 @@ class AccueilController extends Controller
     {
         $users = User::get();
         // dd($users);
-        return view('admin.index', compact('users'));
+        return view('admin.users', compact('users'));
     }
 }
