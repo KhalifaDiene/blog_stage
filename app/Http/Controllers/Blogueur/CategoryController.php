@@ -11,6 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
+        // $categories= Category::with('Articles')->get();
         // Pour recupérer l'ensemble des categories de l'utilisateur et des articles qui en dépendent
         $categories = Category::where('user_id', Auth::user()->id)->with('articles')->get();
         // dd($categories);

@@ -9,6 +9,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\CssSelector\Node\FunctionNode;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,12 +34,16 @@ Auth::routes(); // Authentification : (Login and Register).
 // Le middleware permet de controler l'accès a certain page
 // Ici le middleware oblige une authentification avant d'accéder à la page Admin.
 Route::group(['middleware' => ['auth']], function() {
-<<<<<<<<< Temporary merge branch 1
 
     Route::group(['middleware' => ['role:admin']], function() {
         // Une groupe de route pour la partie Admin
         Route::prefix('/admin')->group(function () {
             Route::get('/', [AdminAccueilController::class, 'index']);
+
+            //Cette route permet de gérer les utilisateurs
+            Route::prefix('/users')->group(function(){
+                 Route::get('/', [AdminAccueilController::class, 'allUsers']);
+            });
         });
     });
 
@@ -68,3 +74,15 @@ Route::group(['middleware' => ['auth']], function() {
 
 // Pour gérer la déconnexion
 Route::get('/logout', [HomeController::class, 'logout']);
+
+
+//**********************/
+Route::get('/blog/detaills_blog', function(){
+    return view('blog.detaills_blog');
+});
+
+//la route permet de de se diriger vers les categories d'un blogueur 
+Route::get('/blog/index/{id}', [CategoryController::class, 'index']);
+
+//la route permet de se diriger vers les articles d'un blogueur 
+Route::get('/blog/index', [ArticleController::class, 'index']);
