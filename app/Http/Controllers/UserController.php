@@ -33,7 +33,7 @@ class UserController extends Controller
             return redirect()->back();
         } else {
             Session::flash('error', 'Mot de passe incorrect');
-            return redirect()->back();
+            return redirect('/');
         }
     }
 }

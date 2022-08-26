@@ -15,7 +15,7 @@
                             <a href="about.html" class="mm-arr">Blogs</a>
                         </li>
                         <li>
-                            <a href="#" class="mm-arr">Articles</a>
+                            <a href="/articles" class="mm-arr">Articles</a>
                         </li>
                     </ul>
                 </div>

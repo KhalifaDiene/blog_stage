@@ -25,6 +25,7 @@ use Symfony\Component\CssSelector\Node\FunctionNode;
 // Cette route permet d'utiliser la page d'accueil du Blog : Pas besoin de ce connecter pour ci accéder.
 Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::post('/add-new-blogueur', [UserController::class, 'addNewUser'])->name('add-new-blogueur');
+Route::get('/articles', [AccueilController::class, 'showArticle']);
 
 // Cette route permet de gérer la redirection des users selon leur profil vers leurs pages.
 Route::get('/home', [HomeController::class, 'index']);
