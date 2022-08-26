@@ -13,13 +13,18 @@
     <!--== LEFT MENU ==-->
     <div class="sb2-13">
         <ul class="collapsible" data-collapsible="accordion">
-            <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+            @if (Auth::user()->profil == "admin")
+            <li><a href="/admin/" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Accueil</a>
             </li>
+            @elseif (Auth::user()->profil == "blogueur")
+            <li><a href="/blogueur" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Accueil</a>
+            </li>
+            @endif
             <li><a href="admin-setting.html"><i class="fa fa-cogs" aria-hidden="true"></i> Parametre</a>
             </li>
 
             @if (Auth::user()->profil == "admin")
-            <li><a href="admin-setting.html"><i class="fa fa-users" aria-hidden="true"></i> Users</a>
+            <li><a href="/admin/users"><i class="fa fa-users" aria-hidden="true"></i> Users</a>
             </li>
             @endif
 

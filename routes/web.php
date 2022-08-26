@@ -37,13 +37,14 @@ Route::group(['middleware' => ['auth']], function() {
         // Une groupe de route pour la partie Admin
         Route::prefix('/admin')->group(function () {
             Route::get('/', [AdminAccueilController::class, 'index']);
+            Route::get('/users', [AdminAccueilController::class, 'allUsers']);
         });
     });
 
     // Une groupe de route pour la partie Blogueur.
     Route::group(['middleware' => ['role:blogueur']], function() {
         Route::prefix('/blogueur')->group(function() {
-            Route::get('/index', [BlogueurAccueilController::class, 'index']);
+            Route::get('/', [BlogueurAccueilController::class, 'index']);
 
             // Cette route permet de gérer la catégorie
             Route::prefix('/categories')->group(function() {

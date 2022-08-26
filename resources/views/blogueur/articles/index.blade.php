@@ -51,21 +51,37 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>united states</td>
-                                                    <td>ST17241</td>
-													<td>03 Jun 1990</td>
-                                                    <td>
-                                                        <span class="label label-success">Active</span>
-                                                    </td>
-													<td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                </tr>
+                                               @if ($categories->isEmpty())
+                                                   <tr class="text-center">Pas d'article</tr>
+                                               @else
+                                                    @foreach ($categories as $category)
+                                                        @if ($category->articles->isEmpty())
+                                                            <tr>
+                                                                <td colspan="9">Pas d'article</td>
+                                                            </tr>
+                                                        @else
+                                                            @foreach ($category->articles as $article)
+                                                                <tr>
+                                                                    <td><span class="list-img"><img src="{{ asset('assets/images/articles/') }}" alt=""></span>
+                                                                    </td>
+                                                                    <td><a href="#"><span class="list-enq-name">{{ $article->title }}</span></a>
+                                                                    </td>
+                                                                    <?php $content =  Str::substr($article->content, 0, 200);
+                                                                    ?>
+                                                                    <td>{!! $content !!}...</td>
+                                                                    <td>{{ $category->name }}</td>
+                                                                    <td>{{ date('d M Y', strtotime($article->created_at)) }}</td>
+                                                                    <td>{{ $article->vue }}</td>
+                                                                    <td>{{ $article->commentaires()->where('commentaires.status', 1)->count(); }}</td>
+                                                                    <td>
+                                                                        <span class="label label-success">Active</span>
+                                                                    </td>
+                                                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                        @endif
+                                                    @endforeach
+                                               @endif
                                             </tbody>
                                         </table>
                                     </div>
