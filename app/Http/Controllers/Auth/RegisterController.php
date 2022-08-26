@@ -60,7 +60,7 @@ class RegisterController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
-     *
+     *l
      * @param  array  $data
      * @return \App\Models\User
      */

@@ -6,6 +6,7 @@ use App\Http\Controllers\Blogueur\AccueilController as BlogueurAccueilController
 use App\Http\Controllers\Blogueur\CategoryController as BlogueurCategoryController;
 use App\Http\Controllers\Blogueur\ArticleController as BlogueurArticleController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\CssSelector\Node\FunctionNode;
@@ -23,6 +24,7 @@ use Symfony\Component\CssSelector\Node\FunctionNode;
 
 // Cette route permet d'utiliser la page d'accueil du Blog : Pas besoin de ce connecter pour ci accéder.
 Route::get('/', [AccueilController::class, 'index'])->name('accueil');
+Route::post('/add-new-blogueur', [UserController::class, 'addNewUser'])->name('add-new-blogueur');
 
 // Cette route permet de gérer la redirection des users selon leur profil vers leurs pages.
 Route::get('/home', [HomeController::class, 'index']);
