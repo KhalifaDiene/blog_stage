@@ -36,6 +36,24 @@ class ArticleController extends Controller
         $article->content = $data['description'];
         $article->category_id = $data['category'];
         $article->save();
+        $id = $article->id;
+        if ($data['image'] != null) {
+            $this->saveMedia($id, $data['image']);
+        }
         return redirect()->back();
+    }
+
+    public function saveMedia($id, $imageArticle)
+    {
+        $article_id = $id;
+        $media = new Media();
+        $image = $imageArticle;
+        $imageName = time().$image->getClientOriginalName();
+        $image->move(public_path('assets/images/categories'),$imageName);
+
+        $media->lien = $imageName;
+        $media->couverture = 1;
+        $media->article_id = $article_id;
+        $media->save();
     }
 }

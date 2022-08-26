@@ -15,7 +15,7 @@
                 <div class="ed-com-t1-right">
                     <ul>
                         @if (Auth::check())
-                        <li><a href="/blogueur/index" >Mon espace</a>
+                        <li><a href="/blogueur/" >Mon espace</a>
                         </li>
                         <li><a href="/blogueur/logout">Se déconnecter</a>
                         </li>

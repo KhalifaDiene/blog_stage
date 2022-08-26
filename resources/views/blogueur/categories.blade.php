@@ -64,7 +64,7 @@
                                            @else
                                                 <td style="width: 650px">{{ $category->description }}</td>
                                            @endif
-                                            <td class="text-center">25</td>
+                                            <td class="text-center">{{ $category->articles()->where('status', 1)->count() }}</td>
                                             <td class="text-center">
                                                 <a href=""><i class="fa fa-eye"></i></a><a href=""><i class="fa fa-trash"></i></a>
                                             </td>

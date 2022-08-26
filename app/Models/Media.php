@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Media extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'lien',
+        'couverture',
+        'status',
+    ];
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
 }

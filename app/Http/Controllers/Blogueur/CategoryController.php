@@ -12,8 +12,9 @@ class CategoryController extends Controller
     public function index()
     {
         // Pour recupérer l'ensemble des categories de l'utilisateur et des articles qui en dépendent
-        $categories = Category::where('user_id', Auth::user()->id)->with('articles')->get();
+        $categories = Category::with('articles')->get();
         // dd($categories);
+        $categories = Category::where('user_id', Auth::user()->id)->with('articles')->get();
         return view('blogueur.categories', compact('categories'));
     }
 
